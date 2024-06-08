@@ -12,4 +12,4 @@ Route::get('product/create', [ProductController::class, 'create'])->name('produc
 Route::post('product/store', [ProductController::class, 'store'])->name('product.store');
 Route::get('product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
 Route::patch('product/update/{product}', [ProductController::class, 'update'])->name('product.update');
-Route::post('product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::get('product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
