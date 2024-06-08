@@ -51,7 +51,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        // put form
+        $categories = Category::all();
+        return view('product.edit', compact('product', 'categories'));
     }
 
     /**
@@ -59,7 +60,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $product->update($request->only(['name', 'description', 'price', 'stock_level', 'category_id']));
 
+        // Delete and update image
+
+        return redirect()->route('product.index')->with('success', 'You have successfully created a product.');
     }
 
     /**
