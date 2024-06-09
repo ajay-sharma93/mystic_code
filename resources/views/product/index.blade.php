@@ -57,7 +57,7 @@
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->stock_level }}</td>
-                                    <td>5</td>
+                                    <td>{{ $product->images_count }}</td>
                                     <td>
                                         <a href="{{ route('product.edit', $product->id) }}">Edit</a> |
                                         <a href="{{ route('product.destroy', $product->id) }}">Delete</a>

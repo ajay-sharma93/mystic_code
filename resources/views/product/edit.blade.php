@@ -79,7 +79,7 @@
                                         <label for="exampleInputFile">Images (Multiple)</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input name="images" type="file" class="custom-file-input"
+                                                <input name="images[]" type="file" class="custom-file-input"
                                                        id="exampleInputFile" multiple>
                                                 <label class="custom-file-label" for="exampleInputFile">Choose
                                                     file</label>
