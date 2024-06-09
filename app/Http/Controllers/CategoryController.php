@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::withCount('childCategories')->get();
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -20,7 +21,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('category.create', compact('categories'));
     }
 
     /**
@@ -28,7 +30,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->only('name', 'parent_id'));
+        return redirect()->route('category.index')->with('success', 'You have successfully created a new category.');
     }
 
     /**
@@ -44,7 +47,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $categories = Category::all();
+        return view('category.edit', compact('category', 'categories'));
     }
 
     /**
@@ -52,7 +56,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->update($request->only('name', 'parent_id'));
+        return redirect()->route('category.index')->with('success', 'You have successfully updated a category.');
     }
 
     /**
@@ -60,6 +65,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('category.index');
     }
 }

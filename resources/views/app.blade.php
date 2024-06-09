@@ -230,6 +230,12 @@
                             <p>Product</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('category.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Category</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
